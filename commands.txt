@@ -1,0 +1,135 @@
+
+WSL(Windows subsystem for Linux)
+* To install Linux on Windows without using VM, use the follwoing command
+- wsl -l -o  -> List the distros available to download
+- wsl -l  -> List the distros installed
+- wsl --install -d <distroName>  -> Install the distro
+- wsl --install  -> Install Ubuntu(default distro)
+- wsl --unregister <distroName>  -> uninstall distro
+Now search the distro we installed(like Ubuntu)
+- exit  -> exit CLI
+
+
+Linux Directory Structure
+* directory is same as folder
+* Some common directories:
+    / -> "root" dir. / top of file system
+    /bin -> binaries and other executable files
+    /etc -> system conf. files
+    /home -> home directories 
+    /home/ankit -> home dir. of user ankit
+    /root -> home dir. for root user (and not /home/root)
+    /opt -> optional or 3rd party software
+    /temp -> temp. space, clears on reboot
+    /usr -> user related programs
+    /var -> variable data, e.g. log files
+    /boot -> files needed to boot the O.S.
+    /export -> shared file systems
+
+* ~ refers to the home dir. of the user(currently logged in) e.g. /home/ankit
+* . refers to current dir., .. refers to parent dir.
+* for the root user, ~ refers to /root
+* hidden files and directories starts with . in Linux. e.g.: .git directory
+In the prompt, # -> root user, $ -> normal user    
+
+
+programmers write source code which is compiled into binaries(executable prog.)
+linux commands are case-sensitive
+- pwd -> present working directory
+- cd <path> -> change directory
+- cd .. -> parent dir.
+- cd - -> go to last visited dir.
+- ls -> list current dir. contents
+- ls -l -> ls with long listing info.
+- ls -a -> displays hidden files/dir. also
+
+
+- ls -r -> displays in reverse
+- ls -t -> sort dir. acc. to time
+- ls -R -> lists files recursively
+- touch <fileName> : creates a new file
+- rm <file> : remove a file
+- mkdir <dir> : make a new dir. (only work if parent directory exists)
+- mkdir -p <dir> : make a new dir. at the specified path, will also create parent dir. if doesn't exist already 
+- rmdir <dir> : remove an empty dir.
+- rm -rf <dir> : recursively removes a dir.
+- cat <file> -> displays the content of file
+- man <command> -> displays the online manual for the command(q to quit)
+- cp <souce> <destination> : copy the source file to the destination
+
+
+
+Files and dir. permissions
+- ls -l -> long listing of files (with permissions)
+Symbol meaning in permissions:
+    -    Regular file
+    d    Directory
+    l    Symbolic link
+    r    Read
+    w    Write
+    x    Execute
+Permission categories:
+    u    User
+    g    Group
+    o    Other
+    a    All
+
+There are 10 characters on permission string
+- rw- r-- r--
+1. Type 
+2. User
+3. Group 
+4. Other
+
+Groups
+* Every user is in atleast one group
+* Users can belong to many groups
+- groups  -> displays a user's group(s)
+- groups <username> -> display group(s) of specified user
+
+Viewing and editing files
+cat <file> : Display the content of file(press q to exit)
+head <file> : Output the top portion(by default 10 lines) of the file
+tail <file> : Output the bottom portion(by default 10 lines) of the file
+head -20 <file> : Display top 20 lines of the file
+tail -f <file> : Display data as it is being written(e.g. used in log files)
+
+Nano Editor
+nano <file>  : Edit the given file
+ctrl + x to exit
+ctrl + o to enter editing mode
+
+Vi(vim) Editor
+vim = vi improved
+- vi <file> : Edit file
+- vim <file> : Same as vi, but more features
+- view <file> : starts vim in read-only mode
+vi has 3 modes: command mode, insert mode, line mode
+we are always in one of the modes
+vi starts in command mode(press Esc to enter command mode from other modes)
+* Vi Insert Mode:
+    i - Insert at the cursor position(most used)
+    I - Insert at the beginning of the line
+    a - append after the cursor position
+    A - append at the end of the line
+* Vi Line Mode:
+    :w - Writes(saves) the file
+    :w! - Forces the files to be saved
+    :q - quit
+    :q! - quit without saving changes
+    :wq! - write and quit
+    :x same as :wq
+
+Zip and Unzip file/directories(only for .zip extension)
+- zip <file> : zip the specified file/dir.
+- unzip <file> unzip the specified file/dir.
+
+
+User
+- whoami :-> list the user logged-in
+- adduser <username>  :-> add a user with the given username, and set the password of this user
+- deluser <username> :-> delete the user
+- userdel <username> :-> delete the user
+- usermod -aG sudo <username>  :-> give root access to the specified user
+- sudo su  :-> accees normalUser -> rootUser
+- exit  :-> After giving the normal user root access, go back to being a normal user
