@@ -32,30 +32,49 @@ Linux Directory Structure
 * hidden files and directories starts with . in Linux. e.g.: .git directory
 In the prompt, # -> root user, $ -> normal user    
 
-
 programmers write source code which is compiled into binaries(executable prog.)
+
 linux commands are case-sensitive
-- pwd -> present working directory
-- cd <path> -> change directory
-- cd .. -> parent dir.
-- cd - -> go to last visited dir.
-- ls -> list current dir. contents
-- ls -l -> ls with long listing info.
-- ls -a -> displays hidden files/dir. also
 
+------------------------------------------------------------------------------------------------------------------------------------
+ 
+ File & Directory Navigation
 
+- pwd : present working directory
+- cd <path> : change directory
+- cd .. : parent dir.(previous dir.)
+- cd - : go to last visited dir.
+- cd ~ OR cd : Go to home directory
+- ls : list current dir. contents
+- ls -l : ls with long listing info.(date, size etc.)
+- ls -a : displays hidden files/dir. also
 - ls -r -> displays in reverse
 - ls -t -> sort dir. acc. to time
 - ls -R -> lists files recursively
-- touch <fileName> : creates a new file
-- rm <file> : remove a file
-- mkdir <dir> : make a new dir. (only work if parent directory exists)
-- mkdir -p <dir> : make a new dir. at the specified path, will also create parent dir. if doesn't exist already 
-- rmdir <dir> : remove an empty dir.
-- rm -rf <dir> : recursively removes a dir.
-- cat <file> -> displays the content of file
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+File & Directory Operations
+
+- touch <fileName>  : creates a new file
+- mkdir <dir>  : make a new dir. (only work if parent directory exists)
+- mkdir -p <dir>  : make a new dir. at the specified path, will also create parent dir. if doesn't exist already 
+- rm <file>  : remove a file
+- rmdir <dir>  : remove an empty dir.
+- rm -rf <dir>  : recursively removes a dir.
+- cp <souce> <destination>  : copy the source file to the destination
+- mv <oldName> <newName  : move or rename a file/directory
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Viewing File Contents
+
+- cat <file>  : view entire file
+- head <file>  : view first 10 lines of a file
+- less <file>  : view last 10 lines of a file
 - man <command> -> displays the online manual for the command(q to quit)
-- cp <souce> <destination> : copy the source file to the destination
+
+------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -81,13 +100,18 @@ There are 10 characters on permission string
 3. Group 
 4. Other
 
+------------------------------------------------------------------------------------------------------------------------------------
+
 Groups
 * Every user is in atleast one group
 * Users can belong to many groups
 - groups  -> displays a user's group(s)
 - groups <username> -> display group(s) of specified user
 
+------------------------------------------------------------------------------------------------------------------------------------
+
 Viewing and editing files
+
 cat <file> : Display the content of file(press q to exit)
 head <file> : Output the top portion(by default 10 lines) of the file
 tail <file> : Output the bottom portion(by default 10 lines) of the file
@@ -120,16 +144,23 @@ vi starts in command mode(press Esc to enter command mode from other modes)
     :wq! - write and quit
     :x same as :wq
 
+------------------------------------------------------------------------------------------------------------------------------------
+
 Zip and Unzip file/directories(only for .zip extension)
+
 - zip <file> : zip the specified file/dir.
 - unzip <file> unzip the specified file/dir.
 
+------------------------------------------------------------------------------------------------------------------------------------
 
 User
-- whoami :-> list the user logged-in
-- adduser <username>  :-> add a user with the given username, and set the password of this user
-- deluser <username> :-> delete the user
-- userdel <username> :-> delete the user
-- usermod -aG sudo <username>  :-> give root access to the specified user
-- sudo su  :-> accees normalUser -> rootUser
-- exit  :-> After giving the normal user root access, go back to being a normal user
+
+- whoami  : list the user logged-in
+- adduser <username>  : add a user with the given username, and set the password of this user
+- deluser <username>  : delete the user
+- userdel <username>  : delete the user
+- usermod -aG sudo <username>  : give root access to the specified user
+- sudo su  : access change from normalUser -> rootUser
+- exit  : After giving the normal user root access, go back to being a normal user
+
+------------------------------------------------------------------------------------------------------------------------------------
